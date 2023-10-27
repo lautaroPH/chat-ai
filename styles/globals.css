@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf');
+  font-display: swap;
+}
+
+.background-gradient {
+  background: linear-gradient(180deg, #0973E1 0%, rgba(9, 115, 225, 0) 173.81%);
+  box-shadow: 0px 4px 4px 0px #00000040;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.bg-gradient {
+  background: linear-gradient(180deg, #0973E1 0%, rgba(9, 115, 225, 0) 173.81%);
+}
+
+.PhoneInputInput:focus {
+  outline: none;
+}
+
+.content-message a {
+  color: #0973E1;
+}
+
+.home-bg {
+  background: linear-gradient(152.96deg, #18498B 42.64%, rgba(24, 73, 139, 0.05) 126.68%);
+}
+
+
+@media screen and (max-width: 768px) {
+  .cropper-point {
+    width: 20px !important;
+    height: 20px !important;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
