@@ -23,7 +23,9 @@ export async function getServerSideProps(ctx) {
   if (!currentUser.user)
     return {
       redirect: {
-        destination: `/login?callbackUrl=/chat-ai/${city}?message=${message}`,
+        destination: `/login?callbackUrl=/chat-ai/${city}${
+          message ? `?message=${message}` : ''
+        }`,
         permanent: false,
       },
     };
